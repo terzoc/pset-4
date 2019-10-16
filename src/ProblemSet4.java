@@ -27,7 +27,7 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-        ps.sum();
+        // ps.sum();
         ps.reverse();
         ps.digits();
         ps.average();
@@ -109,6 +109,28 @@ public class ProblemSet4 {
      */
 
     public void reverse() {
+      boolean inputValid = false;
+      System.out.print("Positive integer: ");
+      long number = in.nextLong();
+
+      while (!inputValid) {
+        if (number > 0) {
+          inputValid = true;
+        }else{
+          System.out.print("Positive integer: ");
+          number = in.nextLong();
+        }
+      }
+
+      long lengthOfNumber = String.valueOf(number).length();
+      for (long i = lengthOfNumber; i > 1; i--) {
+        int digit = (int) number % 10;
+        number /= 10;
+        System.out.printf("%d, ", digit);
+      }
+      int digit = (int) number % 10;
+      number /= 10;
+      System.out.printf("%d.", digit);
 
     }
 
