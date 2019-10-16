@@ -91,11 +91,9 @@ public class ProblemSet4 {
           // upperBound /= 2;
         }
       }
-      System.out.println(upperBound + " " + lowerBound);
-      long differnce = upperBound - lowerBound;
-      differnce ++;
+      // System.out.println(upperBound + " " + lowerBound);
       double sum = 0;
-      for (long i = lowerBound; i <= differnce; i++ ) {
+      for (long i = lowerBound; i <= upperBound; i++ ) {
         double addOn = i;
         sum += addOn;
         i++;
