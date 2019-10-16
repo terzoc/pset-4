@@ -110,7 +110,7 @@ public class ProblemSet4 {
 
     public void reverse() {
       boolean inputValid = false;
-      System.out.print("Positive integer: ");
+      System.out.print("\nPositive integer: ");
       long number = in.nextLong();
 
       while (!inputValid) {
@@ -121,7 +121,7 @@ public class ProblemSet4 {
           number = in.nextLong();
         }
       }
-
+      System.out.println("");
       long lengthOfNumber = String.valueOf(number).length();
       for (long i = lengthOfNumber; i > 1; i--) {
         int digit = (int) number % 10;
@@ -130,7 +130,7 @@ public class ProblemSet4 {
       }
       int digit = (int) number % 10;
       number /= 10;
-      System.out.printf("%d.", digit);
+      System.out.printf("%d.\n", digit);
 
     }
 
@@ -142,7 +142,18 @@ public class ProblemSet4 {
      */
 
     public void digits() {
-
+      boolean inputValid = false;
+      System.out.print("\nPositive integer: ");
+      long number = in.nextLong();
+      
+      while (!inputValid) {
+        if (number > 0) {
+          inputValid = true;
+        }else{
+          System.out.print("Positive integer: ");
+          number = in.nextLong();
+        }
+      }
     }
 
     /*
