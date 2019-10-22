@@ -27,10 +27,10 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-        ps.sum();
-        ps.reverse();
-        ps.digits();
-        ps.average();
+        // ps.sum();
+        // ps.reverse();
+        // ps.digits();
+        // ps.average();
         ps.prime();
         ps.fibonacci();
         ps.factors();
@@ -221,9 +221,9 @@ public class ProblemSet4 {
           number = in.nextLong();
         }
       }
-      for (int i = 2; i < Math.floor(Math.sqrt(number)) ; i++ ) {
+      for (int i = 2; i <= Math.ceil(Math.sqrt(number)) ; i++ ) {
         double testNumber = number;
-        if ((testNumber % 2) == 0) {
+        if ((testNumber % i) == 0) {
           isPrime = false;
         }
       }
