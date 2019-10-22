@@ -31,8 +31,8 @@ public class ProblemSet4 {
         // ps.reverse();
         // ps.digits();
         // ps.average();
-        ps.prime();
-        ps.fibonacci();
+        // ps.prime();
+        // ps.fibonacci();
         ps.factors();
         ps.mario();
         ps.luigi();
@@ -214,7 +214,7 @@ public class ProblemSet4 {
       boolean isPrime = true;
 
       while (!inputValid) {
-        if (number > 0) {
+        if (number >= 0) {
           inputValid = true;
         }else{
           System.out.print("Non-negative integer: ");
@@ -244,7 +244,29 @@ public class ProblemSet4 {
      */
 
     public void fibonacci() {
+      boolean inputValid = false;
+      System.out.print("\nPositive integer: ");
+      long nth = in.nextLong();
+      long number1 = 0;
+      long number2 = 1;
+      int i = 1;
 
+      while (!inputValid) {
+        if ((nth > 0) && (nth <= 92)) {
+          inputValid = true;
+        }else{
+          System.out.print("Positive integer: ");
+          nth = in.nextLong();
+        }
+      }
+
+      while (i <= nth) {
+         long sum = number1 + number2;
+         number1 = number2;
+         number2 = sum;
+         i++;
+      }
+      System.out.println("\n" + number1 + ".");
     }
 
     /*
