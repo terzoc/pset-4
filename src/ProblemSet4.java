@@ -27,12 +27,13 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-        // ps.sum();
-        // ps.reverse();
-        // ps.digits();
-        // ps.average();
-        // ps.prime();
-        // ps.fibonacci();
+
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
+        ps.prime();
+        ps.fibonacci();
         ps.factors();
         ps.mario();
         ps.luigi();
@@ -276,6 +277,29 @@ public class ProblemSet4 {
      */
 
     public void factors() {
+      boolean inputValid = false;
+      System.out.print("\nPositive integer: ");
+      long number = in.nextLong();
+
+
+      while (!inputValid) {
+        if (number > 0) {
+          inputValid = true;
+        }else{
+          System.out.print("Positive integer: ");
+          number = in.nextLong();
+        }
+      }
+      System.out.println("");
+      System.out.print("1, " + number);
+      for (int i = 2; i <= (number /i)  ; i++ ) {
+        double testNumber = number;
+        if  ((testNumber % i) == 0) {
+          System.out.print(", " + i + ", " + (number/i));
+        }
+      }
+      System.out.print(".");
+
 
     }
 
