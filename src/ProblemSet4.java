@@ -27,14 +27,13 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-
-        ps.sum();
-        ps.reverse();
-        ps.digits();
-        ps.average();
-        ps.prime();
-        ps.fibonacci();
-        ps.factors();
+        // ps.sum();
+        // ps.reverse();
+        // ps.digits();
+        // ps.average();
+        // ps.prime();
+        // ps.fibonacci();
+        // ps.factors();
         ps.mario();
         ps.luigi();
         ps.credit();
@@ -311,7 +310,30 @@ public class ProblemSet4 {
      */
 
     public void mario() {
+      boolean inputValid = false;
+      System.out.print("\nHeight: ");
+      int height = in.nextInt();
 
+      while (!inputValid) {
+        if (height > 0 && height < 25) {
+          inputValid = true;
+        }else{
+          System.out.print("Height: ");
+          height = in.nextInt();
+        }
+      }
+
+      for(int i = 0; i < height; i++) {
+          System.out.println();
+          for(int j = 0; j < height - 1 - i; j ++) {
+              System.out.print(" ");
+          }
+          for(int k = 0; k < i + 2; k++) {
+              System.out.print("#");
+          }
+      }
+
+      System.out.println("");
     }
 
     /*
