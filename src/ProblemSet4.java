@@ -1,20 +1,9 @@
-/**
- * Problem Set 4.
- *
- * It's time to put your skills to the test. This problem set focuses on using
- * iterative control structures. The `main` method is done for you. Lines 30-39
- * trigger each of the predefined methods, which you can think of as self-contained
- * executable pieces of logic. Write your code for each exercise in the
- * corresponding method.
- *
- * The specifications for each exercise are outlined below. Your job is to write
- * lines of code to produce answers to my questions. Each exercise requires that
- * you ask the user to enter one or more values. Your code must meet the
- * requirements set forth in this section (as well as the *Deliverables* section).
- *
- * Work through these exercises on your own. Experiment, make mistakes, ask
- * questions, and fix your mistakes. It's the only way to get good at programming.
- */
+/*
+* Problem Set 4.
+* Copyright (c) 2019. UCVTS and its affiliated.
+*
+* Use is allowed as long as credit is given.
+*/
 
 import java.util.Scanner;
 
@@ -35,7 +24,7 @@ public class ProblemSet4 {
         // ps.fibonacci();
         // ps.factors();
         // ps.mario();
-        ps.luigi();
+        // ps.luigi();
         ps.credit();
 
         in.close();
@@ -131,7 +120,6 @@ public class ProblemSet4 {
       int digit = (int) number % 10;
       number /= 10;
       System.out.printf("%d.\n", digit);
-
     }
 
     /*
@@ -233,7 +221,6 @@ public class ProblemSet4 {
       }else {
         System.out.println("\nNot prime.");
       }
-
     }
 
     /*
@@ -280,7 +267,6 @@ public class ProblemSet4 {
       System.out.print("\nPositive integer: ");
       long number = in.nextLong();
 
-
       while (!inputValid) {
         if (number > 0) {
           inputValid = true;
@@ -298,8 +284,6 @@ public class ProblemSet4 {
         }
       }
       System.out.print(".");
-
-
     }
 
     /*
@@ -384,6 +368,62 @@ public class ProblemSet4 {
      */
 
     public void credit() {
+       long cardNumber = 0;
+       int firstSum = 0;
+       int secondSum = 0;
+       String sumString = "";
+       String typeOfCard = "Invalid";
+       String cardString = "";
 
-    }
+       System.out.print("\nNumber: ");
+       cardNumber = in .nextLong();
+       cardString = Long.toString(cardNumber);
+
+       while (cardNumber <= 0) {
+           System.out.print("Number: ");
+           cardNumber = in .nextLong();
+           cardString = Long.toString(cardNumber);
+       }
+
+       cardString = Long.toString(cardNumber);
+       for (int i = cardString.length() - 2; i > -1; i -= 2) {
+           sumString += Integer.toString(2 * Integer.parseInt(cardString.substring(i, i + 1)));
+       }
+
+       for (int i = sumString.length() - 1; i >= 0; i --) {
+           firstSum += Integer.parseInt(sumString.substring(i, i + 1));
+       }
+
+       for (int i = cardString.length() - 1; i >= 0; i -= 2 ) {
+           secondSum += Integer.parseInt(cardString.substring(i, i + 1));
+       }
+
+       if (cardString.length() == 15 && (cardString.substring(0, 2).equals("37") ||
+         cardString.substring(0, 2).equals("34")) && ((firstSum + secondSum) % 10 == 0)) {
+           typeOfCard = "Amex";
+       } else if ((cardString.length() == 16 || cardString.length() == 13) && ((firstSum + secondSum) % 10 == 0) &&
+         (cardString.substring(0, 1).equals("4"))) {
+           typeOfCard = "Visa";
+       } else if (cardString.length() == 16 && ((firstSum + secondSum) % 10 == 0)) {
+           switch (cardString.substring(0, 2)) {
+               case "51":
+                   typeOfCard = "Mastercard";
+                   break;
+               case "52":
+                   typeOfCard = "Mastercard";
+                   break;
+               case "53":
+                   typeOfCard = "Mastercard";
+                   break;
+               case "54":
+                   typeOfCard = "Mastercard";
+                   break;
+               case "55":
+                   typeOfCard = "Mastercard";
+                   break;
+           }
+       }
+
+       System.out.printf("\n%s.\n", typeOfCard);
+   }
 }
