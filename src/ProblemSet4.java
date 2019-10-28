@@ -16,15 +16,15 @@ public class ProblemSet4 {
 
         // comment out or uncomment as needed
 
-        // ps.sum();
-        // ps.reverse();
-        // ps.digits();
-        // ps.average();
-        // ps.prime();
-        // ps.fibonacci();
-        // ps.factors();
-        // ps.mario();
-        // ps.luigi();
+        ps.sum();
+        ps.reverse();
+        ps.digits();
+        ps.average();
+        ps.prime();
+        ps.fibonacci();
+        ps.factors();
+        ps.mario();
+        ps.luigi();
         ps.credit();
 
         in.close();
@@ -53,7 +53,7 @@ public class ProblemSet4 {
           if (lowerBound <= upperBound) {
             boundsVaild = true;
           }else {
-            System.out.print("\nLower bound: ");
+            System.out.print("Lower bound: ");
             lowerBound = in.nextLong();
             System.out.print("Upper bound: ");
             upperBound = in.nextLong();
@@ -295,7 +295,7 @@ public class ProblemSet4 {
 
     public void mario() {
       boolean inputValid = false;
-      System.out.print("\nHeight: ");
+      System.out.print("\n\nHeight: ");
       int height = in.nextInt();
 
       while (!inputValid) {
@@ -423,7 +423,6 @@ public class ProblemSet4 {
                    break;
            }
        }
-
        System.out.printf("\n%s.\n", typeOfCard);
    }
 }
